@@ -1,0 +1,44 @@
+{
+  "name": "starter-template",
+  "version": "1.0.0",
+  "description": "Starter with bootstrap sass usw",
+  "main": "index.js",
+  "scripts": {
+    "test": "sass --watch sass/style.sass:css/style.css",
+    "css:lint": "stylelint --config build/.stylelintrc --syntax scss \"scss/**/*.scss\" --cache --cache-location \"build/.stylelintcache/\"",
+    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/main.scss css/style.css",
+    "css:prefix": "postcss --config build/postcss.config.js --replace \"*.css\" \"!*.min.css\"",
+    "css:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output style.min.css style.css",
+    "css:watch": "npm css:lint && npm run css:compile && npm run css:prefix && npm run css:minify",
+    "css": "watch 'npm run css:compile' scss"
+  },
+  "author": "Silvan Armbruster",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^8.1.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "watch": "^1.0.2"
+  },
+  "browserslist": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
+  ]
+}

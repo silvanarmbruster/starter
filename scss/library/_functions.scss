@@ -1,0 +1,12 @@
+@function get-max($map, $key) {
+  $list: ();
+
+  // Loop through each item in the map
+  @each $map-key, $sub-map in $map {
+    // Add the desired value to our list, from the sub-map
+    $list: append($list, map-get($sub-map, $key), comma);
+  }
+
+  // Get the largest number from our list
+  @return max($list...);
+}

@@ -1,2 +1,12 @@
-@import "./scss/variables";
-@import "./node_modules/bootstrap/scss/bootstrap";
+// GENERAL STYLING
+// @import "./scss/library/general";
+@import "./scss/library/fonts";
+
+// BOOTSTRAP
+@import "./scss/bootstrap/scss/bootstrap";
+
+// MIXINS
+@import "./scss/library/responsive-font-size";
+
+// ACTUAL STYLING
+@import "./scss/custom";

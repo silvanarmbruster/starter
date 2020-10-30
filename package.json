@@ -6,9 +6,9 @@
   "scripts": {
     "test": "sass --watch sass/style.sass:css/style.css",
     "css:lint": "stylelint --config build/.stylelintrc --syntax scss \"scss/**/*.scss\" --cache --cache-location \"build/.stylelintcache/\"",
-    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/main.scss css/style.css",
-    "css:prefix": "postcss --config build/postcss.config.js --replace \"*.css\" \"!*.min.css\"",
-    "css:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output style.min.css style.css",
+    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/main.scss ../../style.css",
+    "css:prefix": "postcss --config build/postcss.config.js --replace \"../../style.css\" \"!*.min.css\"",
+    "css:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output ../../style.min.css ../../style.css",
     "css:watch": "npm css:lint && npm run css:compile && npm run css:prefix && npm run css:minify",
     "css": "watch 'npm run css:compile' scss"
   },
